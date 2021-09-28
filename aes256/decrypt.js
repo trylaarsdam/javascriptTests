@@ -1,8 +1,8 @@
 const CryptoJS = require('crypto-js');
 
-var ciphertext = "7lbNQzFy1exDPz0gHzmp3FZXMYcrjZKtkkkLsKXCmbQ=";
-var key = "11111111111111111111111111111111";
-var iv = "";
+var ciphertext = "IPwm3rNQ3bVWWfJobRv2whs3LTGymK4dtxWmIdqBe5dZraZDnCErpFKoTNT3H5KuS5BhWuW91KiIcOFbxK/UEg==";
+var key = "RgUkXp2s5v8y/B?D(G+KbPeShVmYq3t6";
+var iv = "q3t6w9z$C&F)J@Nc";
 
 var ciphertextWA = CryptoJS.enc.Base64.parse(ciphertext);
 var keyWA = CryptoJS.enc.Utf8.parse(key);
