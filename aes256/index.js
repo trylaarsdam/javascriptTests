@@ -1,6 +1,4 @@
 var aes256 = require('aes256');
-var plaintext = 'this is a test';
-var buffer = Buffer.from(plaintext);
 
 var key = 'jaoiwejioajiweojtoaiwjeyiojawioejyioawjeyoajweyoiawjeoyijawoeiyjawoejyaoweijyaowieyjaoijtlfkjasdfnasdnfbzd.'
 
