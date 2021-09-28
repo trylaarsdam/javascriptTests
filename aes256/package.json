@@ -7,5 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "trylaarsdam",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "aes256": "^1.1.0"
+  }
 }
