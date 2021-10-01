@@ -18,4 +18,4 @@ var decrypted = CryptoJS.AES.decrypt(
     }
 );
 
-console.log(decrypted.toString(CryptoJS.enc.Utf8)); // Apple
+console.log(decrypted.toString(CryptoJS.enc.Utf8));
