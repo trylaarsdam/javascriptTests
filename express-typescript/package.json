@@ -1,0 +1,19 @@
+{
+  "name": "express-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trylaarsdam/javascriptTests.git"
+  },
+  "author": "trylaarsdam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trylaarsdam/javascriptTests/issues"
+  },
+  "homepage": "https://github.com/trylaarsdam/javascriptTests#readme"
+}
