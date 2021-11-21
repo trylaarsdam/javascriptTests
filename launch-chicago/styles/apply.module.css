@@ -1,0 +1,34 @@
+.formLabel {
+  font-size: 1em;
+  margin: .3em;
+  color: #000;
+}
+
+.formInput {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+}
+
+.formButton {
+  transition: all .2s ease;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
+  color: white;
+  text-decoration: none;
+  background: #358bee;
+  padding: .6rem;
+  margin: 1rem;
+  border-radius: 10px;
+  border: 0;
+  font-size: 18px;
+}
+
+.formButton:hover {
+  background: white;
+  border: 3px solid #358bee;
+  color: #358bee;
+  padding: .45rem;
+}
