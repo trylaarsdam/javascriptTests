@@ -27,11 +27,11 @@ export default function Home() {
               <h3>Start Application &rarr;</h3>
             </a>
           </Link>
-
-          <a href="/test/pass" className="card">
-            <h3>Application Status &rarr;</h3>
-          </a>
-
+          <Link href="/status">
+            <a className="card">
+              <h3>Application Status &rarr;</h3>
+            </a>
+          </Link>
           <a
             href="/test/fail"
             className="card"
