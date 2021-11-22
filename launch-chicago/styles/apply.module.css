@@ -32,3 +32,11 @@
   color: #358bee;
   padding: .45rem;
 }
+
+.pAccepted {
+  color: rgb(0, 153, 0);
+}
+
+.pRejected {
+  color: rgb(153, 0, 0);
+}

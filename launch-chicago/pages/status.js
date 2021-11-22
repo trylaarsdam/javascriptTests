@@ -38,6 +38,7 @@ export default function Form() {
           state: result.application.state,
           zipcode: result.application.zipcode,
           status: result.application.status,
+          name: result.application.name,
         })) }
       });
     }
