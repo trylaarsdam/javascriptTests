@@ -5,17 +5,13 @@ export default async function handler(req, res) {
     // Process a POST request
 
     console.log(req.body);
-    var studentID = JSON.parse(req.body).studentID
-    var email = JSON.parse(req.body).email
-
+    var studentID = req.body.id
+    var email = req.body.email
+    //console.log("test")
     var application = await firebase.getApplication(studentID)
-    if(application.length > 0){
-      if(application[0].email === email){
-        res.status(200).send({ status: 'valid', application = application[0]})
-      }
-      else {
-        res.status(200).send({ status: 'invalid'})
-      }
+    //console.log(application)
+    if(application.email === email){
+      res.status(200).send({ status: 'valid', application: application})
     }
     else {
       res.status(200).send({ status: 'invalid'})

@@ -24,7 +24,7 @@ export default function Form() {
     })
 
     const result = await res.json()
-    if(result.status === 'registered') {
+    if(result.status === 'valid') {
       // alert('Successfully registered!')
       // window.location.href = '/nextsteps'
       router.push({
@@ -39,6 +39,9 @@ export default function Form() {
           zipcode: event.target.zipcode.value,
         })) }
       });
+    }
+    else {
+
     }
     // result.user => 'Ada Lovelace'
   }
