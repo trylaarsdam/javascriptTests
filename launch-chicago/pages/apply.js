@@ -3,14 +3,25 @@ import Head from 'next/head'
 import Layout from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import applyStyles from '../styles/apply.module.css'
+import { useRouter } from 'next/router';
+
 
 export default function Form() {
+  const router = useRouter();
+
   const registerUser = async event => {
     event.preventDefault()
-
+    console.log("event")
     const res = await fetch('/api/register', {
       body: JSON.stringify({
-        name: event.target.name.value
+        name: event.target.name.value,
+        email: event.target.email.value,
+        address1: event.target.address1.value,
+        address2: event.target.address2.value,
+        address3: event.target.address3.value,
+        city: event.target.city.value,
+        state: event.target.state.value,
+        zipcode: event.target.zipcode.value,
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -19,6 +30,14 @@ export default function Form() {
     })
 
     const result = await res.json()
+    if(result.status === 'registered') {
+      alert('Successfully registered!')
+      // window.location.href = '/nextsteps'
+      router.push({
+        pathname: '/nextsteps',
+        query: { id: result.randomStudentID }
+      });
+    }
     // result.user => 'Ada Lovelace'
   }
 
@@ -35,16 +54,17 @@ export default function Form() {
         <input id="name" name="name" type="text" autoComplete="name" className={applyStyles.formInput} align="right" required />
         <br/>
         <label htmlFor="email" className={applyStyles.formLabel}>Email*</label>
-        <input id="email" name="email" type="email" autoComplete="email" className={applyStyles.formInput} align="right" required />
+        <input id="email" name="email" type="email" 
+          autoComplete="email" className={applyStyles.formInput} align="right" required />
         <br/>
         <label htmlFor="address1" className={applyStyles.formLabel}>Street Address*</label>
-        <input id="address" name="address" type="text" autoComplete="address" className={applyStyles.formInput} required />
+        <input id="address1" name="address1" type="text" autoComplete="address1" className={applyStyles.formInput} required />
         <br/>
         <label htmlFor="address2" className={applyStyles.formLabel}>Address Line 2</label>
-        <input id="address" name="address" type="text" autoComplete="address" className={applyStyles.formInput} />
+        <input id="address2" name="address2" type="text" autoComplete="address2" className={applyStyles.formInput} />
         <br/>
         <label htmlFor="address3" className={applyStyles.formLabel}>Address Line 3</label>
-        <input id="address" name="address" type="text" autoComplete="address" className={applyStyles.formInput} />
+        <input id="address3" name="address3" type="text" autoComplete="address3" className={applyStyles.formInput} />
         <br/>
         <label htmlFor="city" className={applyStyles.formLabel}>City*</label>
         <input id="city" name="city" type="text" autoComplete="city" className={applyStyles.formInput} required />
@@ -55,7 +75,7 @@ export default function Form() {
         <label htmlFor="zipcode" className={applyStyles.formLabel}>Zip Code*</label>
         <input id="zipcode" name="zipcode" type="number" autoComplete="zipcode" className={applyStyles.formInput} required />
         <br/>
-        <button className={applyStyles.formButton} type="submit">Submit Launch Application</button>
+        <button className={applyStyles.formButton} type="submit">Launch your Application</button>
       </form>
     </Layout>
   </>

@@ -22,9 +22,11 @@ export default function Home() {
         </p> */}
 
         <div className="grid">
-          <a href="/apply" className="card">
-            <h3>Start Application &rarr;</h3>
-          </a>
+          <Link href="/apply">
+            <a className="card">
+              <h3>Start Application &rarr;</h3>
+            </a>
+          </Link>
 
           <a href="/test/pass" className="card">
             <h3>Application Status &rarr;</h3>
