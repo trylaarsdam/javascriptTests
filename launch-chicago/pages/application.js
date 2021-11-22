@@ -10,35 +10,29 @@ export default function NextSteps() {
   if(router.query.id && router.query.application) {
     return (
       <>
-      <Layout>
-        <Head>
-          <title>Launch Application</title>
-        </Head>
-        <h1>Student Application Status</h1>
-        <p>Congratulations! Your application was successfully submitted.
-          <br/><br/>
-          Your unique application ID is: <strong>{atob(router.query.id)}</strong>. You will need this ID to view your application status when you recieve a response.
-          When your application has finished being reviewed and a decision has been made, you will receive an email telling you to visit this website 
-          to view your decision.
-          <br/><br/>
-          Make sure to copy this ID and keep it safe. A confirmation email will be sent to you shortly.
-          <br/><br/>
-          Here's what we have received from you. If any of the information here is not correct or has changed, please contact Kevin at <a href="mailto:kevin@launchchicago.io">kevin@launchchicago.io</a>.
-          <br/><br/>
-          <strong>Name:</strong> {JSON.parse(atob(router.query.application)).name}
-          <br/><br/>
-          <strong>Email:</strong> {JSON.parse(atob(router.query.application)).email}
-          <br/><br/>
-          <strong>Address:</strong> {JSON.parse(atob(router.query.application)).address1}
-          <br/><br/>
-          <strong>City:</strong> {JSON.parse(atob(router.query.application)).city}
-          <br/><br/>
-          <strong>State:</strong> {JSON.parse(atob(router.query.application)).state}
-          <br/><br/>
-          <strong>Zip Code:</strong> {JSON.parse(atob(router.query.application)).zipcode}
-        </p>
-      </Layout>
-    </>
+        <Layout>
+          <Head>
+            <title>Launch Application</title>
+          </Head>
+          <h1>Student Application Status</h1>
+          <p>Current Application Status: {JSON.parse(atob(router.query.application)).status}
+            <br/><br/>
+            Here's what we have received from you. If any of the information here is not correct or has changed, please contact Kevin at <a href="mailto:kevin@launchchicago.io">kevin@launchchicago.io</a>.
+            <br/><br/>
+            <strong>Name:</strong> {JSON.parse(atob(router.query.application))["name"]}
+            <br/><br/>
+            <strong>Email:</strong> {JSON.parse(atob(router.query.application)).email}
+            <br/><br/>
+            <strong>Address:</strong> {JSON.parse(atob(router.query.application)).address1}
+            <br/><br/>
+            <strong>City:</strong> {JSON.parse(atob(router.query.application)).city}
+            <br/><br/>
+            <strong>State:</strong> {JSON.parse(atob(router.query.application)).state}
+            <br/><br/>
+            <strong>Zip Code:</strong> {JSON.parse(atob(router.query.application)).zipcode}
+          </p>
+        </Layout>
+      </>
     )
   }
   else {
@@ -48,8 +42,8 @@ export default function NextSteps() {
         <Head>
           <title>Launch Application</title>
         </Head>
-        <h1>Error Submitting Application</h1>
-        <p>Your application was not submitted correctly. Please <Link href="/apply"><a>try again</a></Link> or contact us if the problem persists.</p>
+        <h1>Error Retrieving Application</h1>
+        <p>The request for this page does not contain a valid applicationn. Please <Link href="/status"><a>try again</a></Link> or contact us if the problem persists.</p>
       </Layout>
     </>
     )

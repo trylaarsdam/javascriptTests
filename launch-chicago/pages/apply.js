@@ -22,6 +22,7 @@ export default function Form() {
         city: event.target.city.value,
         state: event.target.state.value,
         zipcode: event.target.zipcode.value,
+        status: "Pending Review"
       }),
       headers: {
         'Content-Type': 'application/json'

@@ -29,14 +29,15 @@ export default function Form() {
       // window.location.href = '/nextsteps'
       router.push({
         pathname: '/application',
-        query: { id: btoa(result.randomStudentID), application: btoa(JSON.stringify({
-          email: event.target.email.value,
-          address1: event.target.address1.value,
-          address2: event.target.address2.value,
-          address3: event.target.address3.value,
-          city: event.target.city.value,
-          state: event.target.state.value,
-          zipcode: event.target.zipcode.value,
+        query: { id: btoa(event.target.id.value), application: btoa(JSON.stringify({
+          email: result.application.email,
+          address1: result.application.address1,
+          address2: result.application.address2,
+          address3: result.application.address3,
+          city: result.application.city,
+          state: result.application.state,
+          zipcode: result.application.zipcode,
+          status: result.application.status,
         })) }
       });
     }
