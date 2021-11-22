@@ -31,11 +31,20 @@ export default function Form() {
 
     const result = await res.json()
     if(result.status === 'registered') {
-      alert('Successfully registered!')
+      // alert('Successfully registered!')
       // window.location.href = '/nextsteps'
       router.push({
         pathname: '/nextsteps',
-        query: { id: result.randomStudentID }
+        query: { id: btoa(result.randomStudentID), application: btoa(JSON.stringify({
+          name: event.target.name.value,
+          email: event.target.email.value,
+          address1: event.target.address1.value,
+          address2: event.target.address2.value,
+          address3: event.target.address3.value,
+          city: event.target.city.value,
+          state: event.target.state.value,
+          zipcode: event.target.zipcode.value,
+        })) }
       });
     }
     // result.user => 'Ada Lovelace'
