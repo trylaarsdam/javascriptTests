@@ -17,6 +17,6 @@ export default async function handler(req, res) {
     res.status(200).send({ status: 'registered', randomStudentID: studentID})
   } else {
     // Handle any other HTTP method
-    res.status(404).json({ error: 'endpoint only supports POST requests' })
+    res.status(404).json({ status: 'error', error: 'endpoint only supports POST requests' })
   }
 }

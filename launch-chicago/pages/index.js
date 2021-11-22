@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -11,10 +12,14 @@ export default function Home() {
 
       <main>
         <h1 className="title">
-          Launch {' '}
-          <Link href="/posts/first-post">
-            <a>Chicago</a>
-            </Link>
+          Apply to {' '}{' '}
+          <Image
+            priority
+            src="/images/logo-small.png"
+            height={90}
+            width={300}
+            alt="Launch"
+          />
         </h1>
 
         {/* <p className="description">
